@@ -21,10 +21,17 @@ public class ZombieSpawner {
 		int health=100;
 		int picwidth = 100;
 		int picheight = 125;
+		int zombieselector = gen.nextInt(2);
 		
 		Zombie a = new Zombie(p, rx, yloc, picwidth, picheight, health);
-//		a.setImage(p.loadImage("D:\\_Pictures\\spaceship2.png"));
-		a.setImage(p.loadImage("zombie2.png"));
+		
+		
+		if(zombieselector == 1){
+			a.setImage(p.loadImage("zombie2.png"));
+		}else{
+			a.setImage(p.loadImage("MaleZombie.png"));
+		}
+		
 		
 		
 		return a;

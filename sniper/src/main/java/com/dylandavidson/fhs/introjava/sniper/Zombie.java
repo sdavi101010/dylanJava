@@ -1,5 +1,6 @@
 package com.dylandavidson.fhs.introjava.sniper;
 
+
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -96,9 +97,23 @@ public class Zombie {
 	
 	public boolean isOver(Zombie w, int mouseX, int mouseY){
 		if(mouseX > x && mouseX < (x+picwidth) && mouseY > y && mouseY < (y+picheight)){
+			if(mouseX > x && mouseX < x+picwidth/3 && mouseY > y && mouseY < y+picheight/6){															// Top Left
+				return false;
+			}else if(mouseX > (x+picwidth)-picwidth/3 && mouseX < x+picwidth && mouseY > y && mouseY < y+picheight/6){									// Top Right
+				return false;
+			}else if(mouseX > x && mouseX < x+(picwidth/4) && mouseY > y + (picheight/2-picheight/7) && mouseY < y + picheight){						// Bottom Left
+				return false;
+			}else if(mouseX > x + picwidth - picwidth/2 && mouseX < x+picwidth && mouseY > y + picheight/2 -picheight/7 && mouseY < y + picheight){		// Bottom Right
+				return false;
+			}else if(mouseX > x + picwidth/3 + picwidth/13 && mouseX < x + picwidth/3 + picwidth/13 + picwidth/10 && mouseY > y + picheight - picheight/4 && mouseY < y + picheight){
+				return false;
+			}
+			
 			return true;
 		}
+		
 		return false;
+		
 	}
 	
 	public boolean tooClose(){
